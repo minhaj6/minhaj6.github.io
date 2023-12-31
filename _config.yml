@@ -85,10 +85,10 @@ author:
   bio              : "PhD student at University of Alabama, working at the Connected and Automated Mobility Lab"
   location         : "Tuscaloosa, Alabama"
   employer         :
-  pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
-  googlescholar    : "http://yourfullgooglescholarurl.com"
-  email            :
-  researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
+  pubmed           : 
+  googlescholar    : "https://scholar.google.com/citations?user=N5G_LYsAAAAJ&hl=en"
+  email            : "mahmad12@crimson.ua.edu"
+  researchgate     : "https://www.researchgate.net/profile/Minhaj_Uddin_Ahmad"
   uri              :
   bitbucket        :
   codepen          :
@@ -103,13 +103,13 @@ author:
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
   linkedin         :
-  orcid            : "http://orcid.org/yourorcidurl"
+  orcid            : 
   pinterest        :
   soundcloud       :
   stackoverflow    : # http://stackoverflow.com/users/123456/username
   steam            :
   tumblr           :
-  twitter          : "replacethistwitterhandle"
+  twitter          : "99Shovon"
   vine             :
   weibo            :
   xing             :
