@@ -13,12 +13,10 @@ I was working on setting up a lightweight LaTeX writing workflow. VIM is my all-
 
 The primary selling point of a lightweight text editor is that - it is blazing fast to start. But with my VIM configuration file and VimTeX plugin, the startup time for the editor was unacceptable. It took around 3-4 seconds to load the editor. So I had to investigate this issue, find out the source of this delay. 
 
-A good way to do this is starting neovim with --startuptime flag. 
-```
-neovim --startuptime output.log
-```
+A good way to do this is starting neovim with --startuptime flag. `neovim --startuptime output.log`
+
 I did it twice, once with my configuration file (where the issue was) and another time without any configuration. Upon inspecting the logfile, I found that neovim is sourcing a file called clipboard.vim. Here's a snippet of the log file. The clipboard.vim file takes 3218 miliseconds (3.2 seconds) to load! 
-```
+<pre>
 063.805  000.006: editing files in windows
 063.970  000.165: VimEnter autocommands
 063.974  000.004: UIEnter autocommands
@@ -26,11 +24,11 @@ I did it twice, once with my configuration file (where the issue was) and anothe
 3283.499  001.076: before starting main loop
 3284.077  000.578: first screen update
 3284.083  000.006: --- NVIM STARTED ---
-```
+</pre>
 The culprit was immediately evident. I had a line in my configuration file related to clipboard. 
-```
-set clipboard=unnamedplus
-```
+
+`set clipboard=unnamedplus`
+
 This sentence makes it so that the VIM copy register is synchronized with operating systems clipboard. If you are interested in understanding, [this video](https://youtu.be/E_rbfQqrm7g?si=d7lG8nbiOBdkrms7) does a pretty good job of explaining. 
 
 Anyhow, I've removed this line from the config, and everything is back on track for now. 
