@@ -1,5 +1,5 @@
 ---
-title: "Happy new year!"
+title: "Happy new year 2024!"
 date: 2024-01-01
 permalink: /posts/2024/01/what-am-i-doing/
 tags:
