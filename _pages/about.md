@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-This is Minhaj Uddin Ahmad. I am currently enrolled as a PhD student at the University of Alabama, under the supervision of [Dr. Mizanur Rahmad](https://mrahman.people.ua.edu/). I am working at the [Connected and Automated Mobility (CAM) Lab](https://mrahman.people.ua.edu/team.html) as a Graduate Research Assistant. My current research interest is sensor fusion applications to improve perception systems, which, in effect, can make the roads safer!
+This is Minhaj Uddin Ahmad. I am currently enrolled as a PhD student at the University of Alabama, under the supervision of [Dr. Mizanur Rahman](https://mrahman.people.ua.edu/). I am working at the [Connected and Automated Mobility (CAM) Lab](https://mrahman.people.ua.edu/team.html) as a Graduate Research Assistant. My current research interests are proactive safety, sensor fusion applications to improve perception systems, which, in effect, can make the roads safer
 
 I completed my undergraduate degree (BSc.Engg, Electrical and Electronic Engineering) from Islamic University of Technology, Bangladesh. Later worked at Spectrum Engineering Consortium Ltd., Bangladesh as R&D Engineer (embedded systems).
 
