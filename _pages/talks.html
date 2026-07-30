@@ -11,6 +11,31 @@ author_profile: true
 
 {% endif %}
 
-{% for post in site.talks reversed %}
-  {% include archive-single-talk.html %}
+{% include base_path %}
+
+{% assign talks = site.talks | where_exp: "t", "t.type != 'Technology demonstration'" | sort: "date" | reverse %}
+{% assign demos = site.talks | where: "type", "Technology demonstration" | sort: "date" | reverse %}
+
+{% if talks.size > 0 %}
+<h2>Talks</h2>
+<ul class="talk-list">
+{% for post in talks %}
+  <li><span class="talk-id">[T.{{ forloop.rindex }}]</span> <span class="talk-cite">{{ post.title }}. <i>{{ post.venue }}</i>, {{ post.location }}, {{ post.date | date: "%B %Y" }}.</span></li>
 {% endfor %}
+</ul>
+{% endif %}
+
+{% if demos.size > 0 %}
+<h2>Technology Demonstrations</h2>
+<ul class="talk-list">
+{% for post in demos %}
+  <li><span class="talk-id">[D.{{ forloop.rindex }}]</span> <span class="talk-cite">{{ post.title }}. <i>{{ post.venue }}</i>, {{ post.location }}, {{ post.date | date: "%B %Y" }}.</span></li>
+{% endfor %}
+</ul>
+{% endif %}
+
+<style>
+.talk-list { list-style: none; padding-left: 0; }
+.talk-list li { display: flex; margin-bottom: 0.75em; }
+.talk-list .talk-id { flex: 0 0 auto; margin-right: 0.5em; font-weight: bold; white-space: nowrap; }
+</style>

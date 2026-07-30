@@ -4,19 +4,17 @@ main:
     url: /publications/
 
   - title: "Talks"
-    url: /talks/    
+    url: /talks/
 
-#  - title: "Teaching"
-#    url: /teaching/    
-    
-#  - title: "Portfolio"
-#    url: /portfolio/
-        
+  - title: "Tools & Software"
+    url: /tools/
+
+  - title: "Resources"
+    url: /resources/
+
   - title: "Blog Posts"
     url: /year-archive/
-    
-#  - title: "CV"
-#    url: /cv/
-    
-#  - title: "Guide"
-#    url: /markdown/
+
+  - title: "CV"
+    url: /files/Minhaj_CV.pdf
+    external: true

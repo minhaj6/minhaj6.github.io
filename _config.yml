@@ -82,7 +82,7 @@ analytics:
 author:
   name             : "Minhaj Uddin Ahmad"
   avatar           : "profile.png"
-  bio              : "PhD student at University of Alabama, working at the Connected and Automated Mobility Lab"
+  bio              : "PhD student at the University of Alabama (Connected and Automated Mobility Lab), researching resilient GNSS/PNT, Alt-PNT, and software-defined radio for secure transportation."
   location         : "Tuscaloosa, Alabama"
   employer         :
   pubmed           : 
@@ -102,14 +102,14 @@ author:
   instagram        :
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
-  linkedin         :
-  orcid            : 
+  linkedin         : "minhajahmad6"
+  orcid            : "https://orcid.org/0000-0002-8600-2685"
   pinterest        :
   soundcloud       :
   stackoverflow    : # http://stackoverflow.com/users/123456/username
   steam            :
   tumblr           :
-  twitter          : "99Shovon"
+  twitter          :
   vine             :
   weibo            :
   xing             :
@@ -179,14 +179,12 @@ collections:
     output: true
     permalink: /:collection/:path/
   publications:
-    output: true
-    permalink: /:collection/:path/
+    output: false
   portfolio:
     output: true
     permalink: /:collection/:path/
   talks:
-    output: true
-    permalink: /:collection/:path/
+    output: false
 
 
 # Defaults

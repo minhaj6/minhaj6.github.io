@@ -1,6 +1,7 @@
 ---
 title: "Flow-Based Path Planning for Multiple Homogenous UAVs for Outdoor Formation-Flying"
 collection: publications
+category: conferences
 permalink: /publication/flow-path-planning-multiple-drone
 excerpt: 
 date: 2022-05-23

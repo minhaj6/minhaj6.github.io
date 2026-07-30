@@ -1,0 +1,52 @@
+# GNSS / navigation books for the Resources gallery.
+# To show a real cover: drop an image in images/book_covers/ and set `cover:` to its filename.
+# Leave `cover:` blank to use the styled placeholder card.
+
+- title: "Position, Navigation, and Timing Technologies in the 21st Century"
+  author: "ed. Y. Jade Morton et al."
+  year: 2020
+  note: "A comprehensive (~1,150-page) reference spanning modern PNT, from signals to systems."
+  cover:
+  accent: "#1f4e5f"
+
+- title: "A-GPS: Assisted GPS, GNSS and SBAS"
+  author: "Frank van Diggelen"
+  year: 2009
+  note: "A great practical treatment of assisted and high-sensitivity GNSS."
+  cover:
+  accent: "#7a4a2b"
+
+- title: "GNSS Software Receivers"
+  author: "Borre, Fernández-Hernández, López-Salcedo, Bhuiyan"
+  year: 2023
+  note: "Modern, hands-on treatment of software-defined GNSS receivers."
+  cover:
+  accent: "#2d3a63"
+
+- title: "A Software-Defined GPS and Galileo Receiver: A Single-Frequency Approach"
+  author: "Borre, Akos, Bertelsen, Rinder, Jensen"
+  year: 2007
+  note: "Ships with a MATLAB software receiver (SoftGPS) and an accompanying SDR front-end."
+  cover:
+  accent: "#4a3b63"
+
+- title: "Cryptography and Satellite Navigation"
+  author: "Joseph J. Rushanan & James T. Gillis"
+  year: 2024
+  note: "How streaming cryptography (TESLA) is used in Galileo OSNMA and GPS Chimera, and the prospects of post-quantum cryptography for these signals."
+  cover:
+  accent: "#5a2a3a"
+
+- title: "GNSS Receivers for Weak Signals"
+  author: "Nesreen I. Ziedan"
+  year: 2006
+  note: "Signal acquisition and tracking under weak-signal conditions."
+  cover:
+  accent: "#2f5a3a"
+
+- title: "ESA GNSS Book"
+  author: "European Space Agency"
+  note: "Free and downloadable from ESA Navipedia."
+  url: "https://gssc.esa.int/navipedia/GNSS_Book/"
+  cover:
+  accent: "#3a3f4a"

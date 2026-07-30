@@ -51,3 +51,20 @@
     font-weight: 700;
   }
 }
+/* External link (e.g. CV PDF) in the top nav — visually distinct from internal pages */
+.greedy-nav a.nav-external {
+  padding: 0.15em 0.6em;
+  border: 1px solid rgba($primary-color, 0.5);
+  border-radius: $border-radius;
+  color: $primary-color;
+
+  &:hover {
+    background-color: $primary-color;
+    color: #fff;
+    border-color: $primary-color;
+  }
+
+  .fa-file-pdf {
+    font-size: 0.85em;
+  }
+}

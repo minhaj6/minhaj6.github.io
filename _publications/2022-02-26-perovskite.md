@@ -1,6 +1,7 @@
 ---
 title: "ABO3 Perovskites’ Formability Prediction and Crystal Structure Classification Using Machine Learning"
 collection: publications
+category: conferences
 permalink: /publication/abo3-perovskite-formability
 excerpt: 
 date: 2022-02-26

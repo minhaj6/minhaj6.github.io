@@ -13,7 +13,11 @@
               {% else %}
               {% assign domain = base_path %}
             {% endif %}
-            <li class="masthead__menu-item"><a href="{{ domain }}{{ link.url }}">{{ link.title }}</a></li>
+            {% if link.external %}
+              <li class="masthead__menu-item"><a class="nav-external" href="{{ domain }}{{ link.url }}" target="_blank" rel="noopener">{{ link.title }}&nbsp;<i class="fas fa-file-pdf" aria-hidden="true"></i></a></li>
+            {% else %}
+              <li class="masthead__menu-item"><a href="{{ domain }}{{ link.url }}">{{ link.title }}</a></li>
+            {% endif %}
           {% endfor %}
         </ul>
         <ul class="hidden-links hidden"></ul>
