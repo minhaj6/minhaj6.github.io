@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-This is Minhaj Uddin Ahmad. I am a PhD student in Civil Engineering (Transportation) at the University of Alabama, advised by [Dr. Mizanur Rahman](https://mrahman.people.ua.edu/), where I work as a Graduate Research Assistant in the [Connected and Automated Mobility (CAM) Lab](https://mrahman.people.ua.edu/team.html). I also completed my MSc in Civil Engineering at the University of Alabama.
+This is Minhaj Uddin Ahmad. I am a PhD student in Civil Engineering (Transportation) at the University of Alabama, advised by [Dr. Mizanur Rahman](https://sites.ua.edu/mrahman/), where I work as a Graduate Research Assistant in the [Cyber-X Lab](https://sites.ua.edu/mrahman/team/) (formerly the Connected and Automated Mobility (CAM) Lab). I also completed my MSc in Civil Engineering at the University of Alabama.
 
 My research centers on resilient positioning, navigation, and timing (PNT) and cybersecurity for connected and automated vehicles. I work on GNSS spoofing detection and mitigation, software-defined PNT receivers, and secure navigation in GNSS-denied environments. This builds on my work in multi-sensor fusion and signal processing.
 

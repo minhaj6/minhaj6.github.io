@@ -82,13 +82,13 @@ analytics:
 author:
   name             : "Minhaj Uddin Ahmad"
   avatar           : "profile.png"
-  bio              : "PhD student at the University of Alabama (Connected and Automated Mobility Lab), researching resilient GNSS/PNT, Alt-PNT, and software-defined radio for secure transportation."
+  bio              : "PhD student at the University of Alabama (Cyber-X Lab, formerly CAM Lab), researching resilient GNSS/PNT, Alt-PNT, and software-defined radio for secure transportation."
   location         : "Tuscaloosa, Alabama"
   employer         :
   pubmed           : 
   googlescholar    : "https://scholar.google.com/citations?user=N5G_LYsAAAAJ&hl=en"
   email            : "mahmad12@crimson.ua.edu"
-  researchgate     : "https://www.researchgate.net/profile/Minhaj_Uddin_Ahmad"
+  researchgate     : 
   uri              :
   bitbucket        :
   codepen          :
@@ -103,7 +103,7 @@ author:
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
   linkedin         : "minhajahmad6"
-  orcid            : "https://orcid.org/0000-0002-8600-2685"
+  orcid            : 
   pinterest        :
   soundcloud       :
   stackoverflow    : # http://stackoverflow.com/users/123456/username
