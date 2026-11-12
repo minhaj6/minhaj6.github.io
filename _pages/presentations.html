@@ -1,0 +1,117 @@
+---
+layout: archive
+title: "Presentations"
+permalink: /presentations/
+redirect_from: /talks/
+author_profile: true
+---
+
+{% include base_path %}
+
+<!-- Map of talks, papers and demos; places come from _data/talkmap.yml -->
+<div class="talk-map-head">
+  <div class="map-legend">
+    <span><i style="background:#f0a23a"></i>Talks, papers &amp; demos</span>
+    <span><i style="background:#3a8fd9"></i>Upcoming</span>
+    <span><i style="background:#8a6fe0"></i>Home base</span>
+  </div>
+  <div class="map-view" role="group" aria-label="Map view">
+    <button type="button" data-view="us" aria-pressed="true">US</button>
+    <button type="button" data-view="all" aria-pressed="false">All</button>
+  </div>
+</div>
+<div id="talk-map" class="talk-map" role="region" aria-label="Map of talks, papers and demonstrations"></div>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script>
+// runs after load so Leaflet's stylesheet (linked above, in the body) is applied first
+window.addEventListener("load", function () {
+  var PLACES = {{ site.data.talkmap | jsonify }};
+  var COLORS = { talk: "#f0a23a", upcoming: "#3a8fd9", home: "#8a6fe0" };
+  var MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  var now = new Date().toISOString().slice(0, 7); // "YYYY-MM"
+  var el = document.getElementById("talk-map");
+  var esc = function (s) { return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;"); };
+  var upcoming = function (e) { return e.kind !== "home" && e.date > now; };
+  var label = function (e) { var p = e.date.split("-"); return p[1] ? MONTHS[+p[1] - 1] + " " + p[0] : p[0]; };
+
+  // marker colour: home base, else upcoming when every event there is still ahead, else talk
+  function placeKind(p) {
+    if (p.events.some(function (e) { return e.kind === "home"; })) return "home";
+    return p.events.every(upcoming) ? "upcoming" : "talk";
+  }
+
+  if (!window.L) { el.style.display = "none"; return; }
+  var map = L.map(el, { scrollWheelZoom: false, zoomSnap: 0.25 });
+  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    maxZoom: 12,
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(map);
+
+  PLACES.forEach(function (p) {
+    var events = p.events.slice().sort(function (a, b) { return a.date < b.date ? 1 : -1; });
+    var items = events.map(function (e) {
+      return "<li><span>" + esc(label(e)) + (upcoming(e) ? " · upcoming" : "") + "</span>" + esc(e.text) + "</li>";
+    }).join("");
+    L.circleMarker([p.lat, p.lng], {
+      radius: 7 + Math.min(events.length, 6) * 1.2, color: "#fff", weight: 2,
+      fillColor: COLORS[placeKind(p)], fillOpacity: 0.95
+    }).addTo(map)
+      .bindTooltip(p.city, { direction: "top", offset: [0, -8] })
+      .bindPopup("<strong>" + esc(p.city) + "</strong><ul>" + items + "</ul>", { maxWidth: 300, maxHeight: 220 });
+  });
+
+  var inUS = function (p) { return p.lng < -60 && p.lng > -130 && p.lat > 20; };
+  function show(view) {
+    var pts = PLACES.filter(function (p) { return view === "all" || inUS(p); });
+    map.fitBounds(pts.map(function (p) { return [p.lat, p.lng]; }), { padding: [36, 36] });
+    document.querySelectorAll(".map-view button").forEach(function (b) {
+      b.setAttribute("aria-pressed", b.getAttribute("data-view") === view);
+    });
+  }
+  document.querySelectorAll(".map-view button").forEach(function (b) {
+    b.addEventListener("click", function () { show(b.getAttribute("data-view")); });
+  });
+  show("us");
+  el.addEventListener("click", function () { map.scrollWheelZoom.enable(); });
+  el.addEventListener("mouseleave", function () { map.scrollWheelZoom.disable(); });
+});
+</script>
+
+{% comment %} The same places as a date-ordered list (newest first), without home-base entries. {% endcomment %}
+{% assign now = site.time | date: "%Y-%m" %}
+{% assign rows = "" | split: "" %}
+{% for p in site.data.talkmap %}{% for e in p.events %}{% unless e.kind == "home" %}
+  {% capture row %}{{ e.date }}|{{ p.city }}|{{ e.text }}|{{ e.kind }}{% endcapture %}
+  {% assign rows = rows | push: row %}
+{% endunless %}{% endfor %}{% endfor %}
+{% assign rows = rows | sort | reverse %}
+
+<ul class="talk-list">
+{% for row in rows %}
+  {% assign f = row | split: "|" %}
+  {% if f[0].size == 7 %}{% assign when = f[0] | append: "-01" | date: "%b %Y" %}{% else %}{% assign when = f[0] %}{% endif %}
+  <li><span class="talk-id">{{ when }}</span> <span class="talk-cite">{{ f[2] | escape }} <span class="talk-meta">{{ f[1] }}{% if f[3] == "demo" %} · live demo{% endif %}{% if f[0] > now %} · upcoming{% endif %}</span></span></li>
+{% endfor %}
+</ul>
+
+<style>
+.talk-list { list-style: none; padding-left: 0; }
+.talk-list li { display: flex; margin-bottom: 0.75em; }
+.talk-list .talk-id { flex: 0 0 5.5em; margin-right: 0.5em; font-weight: bold; white-space: nowrap; }
+.talk-list .talk-meta { display: block; font-size: 0.85em; color: #7a8288; }
+.talk-map-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 0.5em 1em; margin-bottom: 0.5em; font-size: 0.8em; }
+.map-legend { display: flex; flex-wrap: wrap; gap: 0.3em 1.1em; }
+.map-legend i { display: inline-block; width: 0.8em; height: 0.8em; border-radius: 50%; margin-right: 0.4em; vertical-align: -0.05em; border: 1px solid #fff; box-shadow: 0 0 0 1px rgba(0,0,0,0.15); }
+.map-view button { font: inherit; padding: 0.2em 0.8em; border: 1px solid #c8ced3; background: #fff; color: inherit; cursor: pointer; }
+.map-view button:first-child { border-radius: 4px 0 0 4px; }
+.map-view button:last-child { border-radius: 0 4px 4px 0; border-left: 0; }
+.map-view button[aria-pressed="true"] { background: #494e52; border-color: #494e52; color: #fff; }
+.talk-map { height: 420px; border-radius: 6px; border: 1px solid #dde1e4; margin-bottom: 1.5em; z-index: 0; }
+.talk-map .leaflet-popup-content { font-size: 13px; line-height: 1.45; margin: 12px 14px; }
+.talk-map .leaflet-popup-content ul { list-style: none; margin: 6px 0 0; padding: 0; }
+.talk-map .leaflet-popup-content li { padding: 5px 0; border-top: 1px solid #eee; margin: 0; }
+.talk-map .leaflet-popup-content li span { display: block; font-size: 11px; font-weight: 700; color: #7a8288; }
+@media (max-width: 600px) { .talk-map { height: 320px; } }
+</style>

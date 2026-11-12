@@ -1,0 +1,74 @@
+# Places on the talks-page map. One entry per city; each event has
+#   date: "YYYY" or "YYYY-MM"   (events dated in the future show as "Upcoming")
+#   kind: demo | talk | home     (talk = talk or conference paper)
+#   text: one line shown in the popup
+
+- city: Tuscaloosa, AL
+  lat: 33.2098
+  lng: -87.5692
+  events:
+    - { date: "2024-01", kind: home, text: "University of Alabama: Ph.D. and M.Sc. in Civil Engineering, Graduate Research Assistant" }
+    - { date: "2026", kind: home, text: "Mentored NSF REU undergraduate researchers" }
+
+- city: Washington, DC
+  lat: 38.9072
+  lng: -77.0369
+  events:
+    - { date: "2024-06", kind: demo, text: "USDOT Future of Transportation Summit: secure GNSS-based autonomous vehicle navigation" }
+    - { date: "2026-01", kind: talk, text: "TRB Annual Meeting: three papers on work zone sensor fusion and trajectory forecasting" }
+    - { date: "2027-01", kind: talk, text: "TRB Annual Meeting: CORS-based GNSS integrity monitoring, roadside responder safety, post-quantum C-V2X signatures" }
+
+- city: Greenville, SC
+  lat: 34.8526
+  lng: -82.3940
+  events:
+    - { date: "2024-10", kind: demo, text: "TraCR Annual Conference: secure GNSS-based autonomous vehicle navigation" }
+
+- city: Lincoln, NE
+  lat: 40.8136
+  lng: -96.7026
+  events:
+    - { date: "2025", kind: demo, text: "FMCSA Proactive Technology Training & Evaluation Workshop: proactive work zone warning system with driving simulator" }
+
+- city: Orlando, FL
+  lat: 28.5384
+  lng: -81.3789
+  events:
+    - { date: "2026-09", kind: talk, text: "ION GNSS+ 2026: three papers on GNSS spoofing and resilient navigation" }
+
+- city: Atlanta, GA
+  lat: 33.7490
+  lng: -84.3880
+  events:
+    - { date: "2026-09", kind: talk, text: "IEEE MLSP 2026: small language model agent for cognitive radar" }
+
+- city: Raleigh, NC
+  lat: 35.7796
+  lng: -78.6382
+  events:
+    - { date: "2026-09", kind: talk, text: "GNU Radio Conference 2026: gr-pocketsdr talk and proceedings paper" }
+
+- city: Portland, OR
+  lat: 45.5152
+  lng: -122.6784
+  events:
+    - { date: "2027-04", kind: talk, text: "IEEE/ION PLANS 2027: five papers on GNSS spoofing, SBAS integrity, precision timing and LiDAR localization" }
+
+- city: Dhaka, Bangladesh
+  lat: 23.8103
+  lng: 90.4125
+  events:
+    - { date: "2023-05", kind: home, text: "Islamic University of Technology: B.Sc. in Electrical Engineering" }
+    - { date: "2023", kind: home, text: "Research Engineer at Cybernetics Hi Tech Solutions; intern at ANTS Aerial Systems" }
+
+- city: Chittagong, Bangladesh
+  lat: 22.3569
+  lng: 91.7832
+  events:
+    - { date: "2022-02", kind: talk, text: "ICISET 2022: machine learning for ABO3 perovskite formability" }
+
+- city: Krakow, Poland
+  lat: 50.0647
+  lng: 19.9450
+  events:
+    - { date: "2022-05", kind: talk, text: "ICMERR 2022: flow-based path planning for UAV formation flying" }

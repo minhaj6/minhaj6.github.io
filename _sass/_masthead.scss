@@ -46,9 +46,12 @@
   list-style-type: none;
   white-space: nowrap;
 
+  font-size: 0.9em; // tabs a step below the site title
+
   &--lg {
     padding-right: 2em;
-    font-weight: 700;
+    font-size: 1em;
+    font-weight: 600; // 700 is not loaded for IBM Plex Sans and gets faux-bolded
   }
 }
 /* External link (e.g. CV PDF) in the top nav — visually distinct from internal pages */

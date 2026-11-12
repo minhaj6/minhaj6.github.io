@@ -11,6 +11,9 @@ You can also find my articles on <u><a href="{{author.googlescholar}}">my Google
 
 {% include base_path %}
 
+{% assign me = "Ahmad, M.U." %}
+{% capture me_html %}<b><u>{{ me }}</u></b>{% endcapture %}
+
 {% assign journal = site.publications | where: "category", "journal" | sort: "date" | reverse %}
 {% assign books = site.publications | where: "category", "books" | sort: "date" | reverse %}
 {% assign conferences = site.publications | where: "category", "conferences" | sort: "date" | reverse %}
@@ -19,7 +22,7 @@ You can also find my articles on <u><a href="{{author.googlescholar}}">my Google
 <h2>Journal Articles</h2>
 <ul class="publication-list">
 {% for post in journal %}
-  <li><span class="pub-id">[J.{{ forloop.rindex }}]</span> <span class="pub-cite">{{ post.citation }}{% if post.paperurl %} [<a href="{{ post.paperurl }}">paper</a>]{% endif %}</span></li>
+  <li><span class="pub-id">[J.{{ forloop.rindex }}]</span> <span class="pub-cite">{{ post.citation | replace: me, me_html }}{% if post.paperurl %} [<a href="{{ post.paperurl }}">paper</a>]{% endif %}</span></li>
 {% endfor %}
 </ul>
 {% endif %}
@@ -28,7 +31,7 @@ You can also find my articles on <u><a href="{{author.googlescholar}}">my Google
 <h2>Book Chapters</h2>
 <ul class="publication-list">
 {% for post in books %}
-  <li><span class="pub-id">[B.{{ forloop.rindex }}]</span> <span class="pub-cite">{{ post.citation }}{% if post.paperurl %} [<a href="{{ post.paperurl }}">paper</a>]{% endif %}</span></li>
+  <li><span class="pub-id">[B.{{ forloop.rindex }}]</span> <span class="pub-cite">{{ post.citation | replace: me, me_html }}{% if post.paperurl %} [<a href="{{ post.paperurl }}">paper</a>]{% endif %}</span></li>
 {% endfor %}
 </ul>
 {% endif %}
@@ -37,7 +40,7 @@ You can also find my articles on <u><a href="{{author.googlescholar}}">my Google
 <h2>Conference Proceedings &amp; Presentations</h2>
 <ul class="publication-list">
 {% for post in conferences %}
-  <li><span class="pub-id">[C.{{ forloop.rindex }}]</span> <span class="pub-cite">{{ post.citation }}{% if post.paperurl %} [<a href="{{ post.paperurl }}">paper</a>]{% endif %}</span></li>
+  <li><span class="pub-id">[C.{{ forloop.rindex }}]</span> <span class="pub-cite">{{ post.citation | replace: me, me_html }}{% if post.paperurl %} [<a href="{{ post.paperurl }}">paper</a>]{% endif %}</span></li>
 {% endfor %}
 </ul>
 {% endif %}

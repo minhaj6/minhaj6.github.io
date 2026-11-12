@@ -7,5 +7,5 @@ excerpt:
 date: 2027-01-10
 venue: 'Transportation Research Board 106th Annual Meeting'
 paperurl: 
-citation: 'Kong, J., Ahmad, M.U., Hainen, A., Rahman, M. and Jones, S. (2027). "Evaluating Roadside Responder Safety Using Camera and LiDAR: Driver Behavior Analysis and Real-Time Near-Miss Detection." In <i>Transportation Research Board 106th Annual Meeting</i>, Washington, DC, USA.'
+citation: 'Kong, J., Ahmad, M.U., Hainen, A., Rahman, M. and Jones, S. (2027). "Evaluating Roadside Responder Safety Using Camera and LiDAR: Driver Behavior Analysis and Real-Time Near-Miss Detection." In <i>Transportation Research Board Annual Meeting</i>, Washington, DC, USA, Jan 10–14, 2027.'
 ---
