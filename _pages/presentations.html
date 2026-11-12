@@ -25,18 +25,19 @@ author_profile: true
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script>
-// runs after load so Leaflet's stylesheet (linked above, in the body) is applied first
+/* Use block comments only: the compress layout puts this script on one line in production. */
+/* runs after load so Leaflet's stylesheet (linked above, in the body) is applied first */
 window.addEventListener("load", function () {
   var PLACES = {{ site.data.talkmap | jsonify }};
   var COLORS = { talk: "#f0a23a", upcoming: "#3a8fd9", home: "#8a6fe0" };
   var MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-  var now = new Date().toISOString().slice(0, 7); // "YYYY-MM"
+  var now = new Date().toISOString().slice(0, 7); /* "YYYY-MM" */
   var el = document.getElementById("talk-map");
   var esc = function (s) { return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;"); };
   var upcoming = function (e) { return e.kind !== "home" && e.date > now; };
   var label = function (e) { var p = e.date.split("-"); return p[1] ? MONTHS[+p[1] - 1] + " " + p[0] : p[0]; };
 
-  // marker colour: home base, else upcoming when every event there is still ahead, else talk
+  /* marker colour: home base, else upcoming when every event there is still ahead, else talk */
   function placeKind(p) {
     if (p.events.some(function (e) { return e.kind === "home"; })) return "home";
     return p.events.every(upcoming) ? "upcoming" : "talk";
